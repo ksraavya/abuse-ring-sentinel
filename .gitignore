@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated data
+data/generated/
+data/raw/
+data/processed/
+
+# Model artifacts
+artifacts/
+models/*.pkl
+models/*.joblib
+models/*.txt
+
+# Logs / runtime
+logs/
+*.log
+tmp/
+.cache/
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local service state
+runtime/

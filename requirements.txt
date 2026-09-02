@@ -1,0 +1,19 @@
+# Core data / ML
+numpy>=2.0,<3
+pandas>=2.2,<3
+scikit-learn>=1.5,<2
+lightgbm>=4.5,<5
+
+# Streaming / graph
+confluent-kafka>=2.5,<3
+neo4j>=5.25,<6
+
+# Configuration / validation
+PyYAML>=6.0,<7
+pydantic>=2.9,<3
+
+# Model persistence
+joblib>=1.4,<2
+
+# Testing
+pytest>=8.3,<9
