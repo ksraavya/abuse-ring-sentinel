@@ -1,0 +1,29 @@
+experiment:
+  name: coordinated-abuse-risk-manager
+  duration_days: 180
+
+worlds:
+  world_a:
+    seed: 42
+
+  world_b:
+    seed: 4242
+
+detectors:
+  baseline_a:
+    transaction_local: true
+    infrastructure_graph: false
+    behavioral_graph: false
+    temporal_state: false
+
+  baseline_b:
+    transaction_local: true
+    infrastructure_graph: true
+    behavioral_graph: false
+    temporal_state: false
+
+  temporal:
+    transaction_local: true
+    infrastructure_graph: true
+    behavioral_graph: true
+    temporal_state: true
