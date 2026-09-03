@@ -13,6 +13,7 @@ class WorldId(str, Enum):
 
 class EventType(str, Enum):
     ACCOUNT_CREATED = "account_created"
+    ACCOUNT_UPDATED = "account_updated"
     TRANSACTION = "transaction"
 
 
@@ -24,78 +25,59 @@ class TransactionChannel(str, Enum):
 
 
 class AccountCreatedEvent(BaseModel):
-    """
-    Observable account-creation event.
-
-    Used to establish account and infrastructure state before
-    subsequent transactions arrive.
-    """
-
     model_config = ConfigDict(extra="forbid")
 
     event_id: str
     event_type: EventType = EventType.ACCOUNT_CREATED
-
     world_id: WorldId
     timestamp: datetime
-
     account_id: str
     device_id: str
     ip_prefix: str
 
 
+class AccountUpdatedEvent(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    event_id: str
+    event_type: EventType = EventType.ACCOUNT_UPDATED
+    world_id: WorldId
+    timestamp: datetime
+    account_id: str
+    old_device_id: str
+    old_ip_prefix: str
+    new_device_id: str
+    new_ip_prefix: str
+    update_reason: str
+
+
 class TransactionEvent(BaseModel):
-    """
-    Canonical observable transaction event transported through Kafka.
-
-    Ground-truth fields are intentionally excluded.
-    """
-
     model_config = ConfigDict(extra="forbid")
 
     event_id: str
     event_type: EventType = EventType.TRANSACTION
-
     world_id: WorldId
     timestamp: datetime
-
     account_id: str
     merchant_id: str | None = None
     counterparty_account_id: str | None = None
-
     amount: float = Field(gt=0)
     channel: TransactionChannel
-
     device_id: str
     ip_prefix: str
 
 
 class TransactionGroundTruth(BaseModel):
-    """
-    Evaluation-only metadata.
-
-    This object must never be published to detector consumers.
-    """
-
     model_config = ConfigDict(extra="forbid")
 
     event_id: str
     world_id: WorldId
-
     is_fraud: bool
     ring_id: str | None = None
 
 
 class EventRecord(BaseModel):
-    """
-    Complete event record used internally by the world generator
-    and evaluation pipeline.
-
-    The observable event and evaluation-only ground truth are
-    structurally separated.
-    """
-
     model_config = ConfigDict(extra="forbid")
 
-    event: AccountCreatedEvent | TransactionEvent
+    event: AccountCreatedEvent | AccountUpdatedEvent | TransactionEvent
     ground_truth: TransactionGroundTruth | None = None

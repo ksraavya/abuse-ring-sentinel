@@ -1,0 +1,30 @@
+seed: 4242
+duration_days: 180
+legitimate_accounts: 100000
+hard_negative_family_clusters: 100
+hard_negative_hostel_clusters: 30
+hard_negative_corporate_clusters: 25
+fast_forming_rings: 18
+slow_burn_rings: 12
+obfuscated_rings: 10
+topology_distribution:
+  distributed: 0.80
+  star: 0.07
+  chain: 0.06
+  cluster: 0.07
+organic_transactions: 2900000
+organic_p2p_fraction: 0.20
+activity_sigma: 1.05
+activity_min_weight: 0.10
+ring_size_min: 8
+ring_size_max: 20
+ring_cover_events_per_member: 4
+precursor_interactions_per_ring: 18
+precursor_merchant_events_per_ring: 18
+precursor_acceleration_events_per_member: 3
+fraud_events_per_participant_min: 8
+fraud_events_per_participant_max: 20
+hard_negative_p2p_rate_per_account_day: 0.20
+hard_negative_activity_multiplier: 1.40
+fraud_participation_probability: 0.65
+precursor_probability: 1.0

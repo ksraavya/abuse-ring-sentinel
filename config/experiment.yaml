@@ -5,7 +5,6 @@ experiment:
 worlds:
   world_a:
     seed: 42
-
   world_b:
     seed: 4242
 

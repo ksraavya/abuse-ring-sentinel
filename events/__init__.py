@@ -1,5 +1,6 @@
 from .schema import (
     AccountCreatedEvent,
+    AccountUpdatedEvent,
     EventRecord,
     EventType,
     TransactionChannel,
@@ -10,6 +11,7 @@ from .schema import (
 
 __all__ = [
     "AccountCreatedEvent",
+    "AccountUpdatedEvent",
     "EventRecord",
     "EventType",
     "TransactionChannel",
