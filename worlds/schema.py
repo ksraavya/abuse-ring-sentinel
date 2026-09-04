@@ -8,7 +8,9 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 class WorldId(str, Enum):
     WORLD_A = "world_a"
     WORLD_B = "world_b"
-
+    WORLD_C = "world_c"
+    WORLD_D = "world_d"
+    
 
 class RingKind(str, Enum):
     FAST = "fast"

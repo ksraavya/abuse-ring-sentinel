@@ -12,7 +12,7 @@ from events.schema import EventRecord
 from .behavior import GeneratedWorld, generate_world, write_world
 from .population import build_hard_negative_clusters, build_legitimate_population
 from .rings import build_ring_plans
-from .schema import WorldConfig
+from .schema import WorldConfig, WorldId
 
 
 class WorldGenerator:
@@ -97,7 +97,7 @@ def load_config(path: Path, world_id: str) -> WorldConfig:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate one complete synthetic world")
-    parser.add_argument("--world", choices=["world_a", "world_b"], required=True)
+    parser.add_argument("--world", choices=[world.value for world in WorldId], required=True)
     parser.add_argument("--config-dir", type=Path, default=Path("config"))
     parser.add_argument("--output-dir", type=Path, default=Path("data/generated"))
     args = parser.parse_args()
