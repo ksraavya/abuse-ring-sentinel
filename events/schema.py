@@ -9,6 +9,8 @@ from pydantic import BaseModel, ConfigDict, Field
 class WorldId(str, Enum):
     WORLD_A = "world_a"
     WORLD_B = "world_b"
+    WORLD_C = "world_c"
+    WORLD_D = "world_d"
 
 
 class EventType(str, Enum):
