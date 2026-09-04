@@ -325,6 +325,9 @@ def main() -> None:
 
     # The matrix is an implementation detail, not a model artifact. Remove it
     # after training so a normal artifact directory stays small.
+    del train_x, valid_x, train_y, valid_y
+    x._mmap.close()
+    y._mmap.close()
     del x, y
     for path in (
         matrix_path,

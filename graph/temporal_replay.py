@@ -56,7 +56,7 @@ class TemporalReplay:
 
     def __init__(self, state: TemporalReplayState | None = None) -> None:
         self.state = state or TemporalReplayState()
-        self._previous_order_key: tuple[str, str] | None = None
+        self._previous_order_key: tuple[datetime, str] | None = None
 
     @staticmethod
     def _parse_event(raw: dict[str, Any]) -> AccountCreatedEvent | AccountUpdatedEvent | TransactionEvent:
@@ -77,7 +77,7 @@ class TemporalReplay:
 
     def _check_order(self, event_id: str, timestamp: datetime) -> str:
         ts = self._utc_iso(timestamp)
-        key = (ts, event_id)
+        key = (timestamp.astimezone(timezone.utc), event_id)  # use datetime not string
         if self._previous_order_key is not None and key < self._previous_order_key:
             raise ValueError(
                 "event stream is not chronological by (timestamp, event_id): "
