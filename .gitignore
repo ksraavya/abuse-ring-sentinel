@@ -33,7 +33,11 @@ data/raw/
 data/processed/
 
 # Model artifacts
-artifacts/
+artifacts/*
+!artifacts/temporal/
+artifacts/temporal/*
+!artifacts/temporal/freeze_manifest.json
+
 models/*.pkl
 models/*.joblib
 models/*.txt
