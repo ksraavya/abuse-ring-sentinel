@@ -32,11 +32,22 @@ data/generated/
 data/raw/
 data/processed/
 
-# Model artifacts
+# Model artifacts — commit only frozen model manifest and evaluation metrics
 artifacts/*
 !artifacts/temporal/
 artifacts/temporal/*
 !artifacts/temporal/freeze_manifest.json
+!artifacts/evaluation/
+!artifacts/evaluation/world_b/
+!artifacts/evaluation/world_b/baseline_a/metrics.json
+!artifacts/evaluation/world_b/baseline_b/metrics.json
+!artifacts/evaluation/world_b/temporal/metrics.json
+!artifacts/evaluation/world_d/
+!artifacts/evaluation/world_d/metrics.json
+!artifacts/verifier/
+!artifacts/verifier/world_c/
+!artifacts/verifier/world_c/tuning/
+!artifacts/verifier/world_c/tuning/freeze_config.json
 
 models/*.pkl
 models/*.joblib
