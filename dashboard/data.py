@@ -197,7 +197,10 @@ def num(value: Any) -> str:
 
 def demo_records(limit: int = 120) -> list[dict[str, Any]]:
     """Return a deliberately varied replay: reviews first, then strong blocks."""
-    rows = load_jsonl_sample(Paths().world_c_records, 5000)
+    path = Paths().world_c_records
+    if not path.is_file():
+        path = ROOT / "dashboard/sample_records.jsonl"
+    rows = load_jsonl_sample(path, 5000)
     if not rows:
         return []
 
