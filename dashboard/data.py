@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 @dataclass(frozen=True)
 class Paths:
     world_c_records: Path = ROOT / "artifacts/verifier/world_c/verification_records.jsonl"
-    world_c_manifest: Path = ROOT / "data/generated/world_c/manifest.json"
+    world_c_manifest: Path = ROOT / "dashboard/ring_manifest.json"
     world_b_eval: Path = ROOT / "artifacts/evaluation/world_b"
     world_d_eval: Path = ROOT / "artifacts/evaluation/world_d"
     verifier_freeze: Path = ROOT / "artifacts/verifier/world_c/tuning/freeze_config.json"

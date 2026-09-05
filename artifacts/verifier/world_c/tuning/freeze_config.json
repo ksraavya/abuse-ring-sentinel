@@ -1,0 +1,66 @@
+{
+  "detector_retrained_on_world_c": false,
+  "detector_threshold_tuned_on_world_c": false,
+  "fusion": {
+    "coverage_bonus": 0.12,
+    "detector_weight": 0.55,
+    "expected_agent_names": [
+      "ring-investigator",
+      "infrastructure-investigator",
+      "context-investigator"
+    ],
+    "strength_multipliers": {
+      "moderate": 0.65,
+      "strong": 1.0,
+      "weak": 0.35
+    },
+    "type_weights": {
+      "account_context": 0.07,
+      "behavioral_acceleration": 0.18,
+      "infrastructure_churn": 0.05,
+      "infrastructure_sharing": 0.12,
+      "merchant_convergence": 0.12,
+      "peer_synchrony": 0.14,
+      "ring_structure": 0.24,
+      "temporal_context": 0.08
+    }
+  },
+  "ground_truth_used_only_for_selection": true,
+  "metrics": {
+    "alert_negative_block_rate": 0.06546747542355155,
+    "block_precision": 0.7444897959183674,
+    "block_recall": 0.7192429022082019,
+    "blocked_fraud_amount": 2404543.060000001,
+    "blocked_fraud_transactions": 1824,
+    "blocks": 2450,
+    "economic_cost": 3873000.0,
+    "exposure_prevented_pct": 0.7339640950645142,
+    "false_positive_blocks": 626,
+    "fraud_amount": 3276104.48,
+    "pre_abuse_recall": 0.35,
+    "reviews": 9648,
+    "ring_recall": 0.975
+  },
+  "policy": {
+    "block_detector_threshold": 0.1,
+    "block_verifier_threshold": 0.35,
+    "detector_alert_threshold": 0.01,
+    "min_block_agent_coverage": 1,
+    "policy_version": "12b-world-c-frozen-v1",
+    "require_strong_evidence_for_block": false,
+    "review_verifier_threshold": 0.1
+  },
+  "purpose": "verifier_and_policy_development_then_freeze",
+  "selection": {
+    "candidate_count_after_constraint": 1620,
+    "constraint": "block_precision >= 0.7000",
+    "priority": [
+      "ring_recall",
+      "pre_abuse_recall",
+      "block_precision",
+      "exposure_prevented_pct",
+      "-false_positive_blocks"
+    ]
+  },
+  "world": "world_c"
+}

@@ -1,0 +1,73 @@
+{
+  "economic_cost": 15447000.0,
+  "evaluation_contract": {
+    "ground_truth_source": "data\\generated\\world_b\\ground_truth.jsonl",
+    "manifest_source": "data\\generated\\world_b\\manifest.json",
+    "threshold_tuned_on_world_b": false,
+    "world_b_kafka_is_evaluation_input": true,
+    "world_b_source_events": "data\\generated\\world_b\\events.jsonl"
+  },
+  "exposure": {
+    "exposure_prevented": 0.0,
+    "exposure_prevented_pct": 0.0,
+    "fraud_exposure": 4158720.01
+  },
+  "false_negative_cost": 5000.0,
+  "false_negatives": 3088,
+  "false_positive_cost": 500.0,
+  "false_positives": 14,
+  "fnr": 1.0,
+  "fpr": 4.743874810499144e-06,
+  "fraud_rate": 0.0010452695123181355,
+  "fraud_transactions": 3088,
+  "frozen_artifact": {
+    "artifact_dir": "artifacts\\baseline_a",
+    "feature_count": 10,
+    "feature_list": [
+      "amount",
+      "amount_log",
+      "hour",
+      "day_of_week",
+      "is_weekend",
+      "is_night",
+      "channel_upi",
+      "channel_card",
+      "channel_wallet",
+      "channel_netbanking"
+    ],
+    "model_sha256": "d48626945b46e09394c639e73caca8abc525b903a9a6ff4889d28e29e18d9770",
+    "threshold": 0.07
+  },
+  "model": "baseline_a",
+  "pr_auc": 0.002575877733099628,
+  "pre_abuse": {
+    "lead_time_days_max": null,
+    "lead_time_days_mean": null,
+    "lead_time_days_median": null,
+    "lead_time_days_min": null,
+    "pre_abuse_detection_recall": 0.0,
+    "rings_detected_pre_abuse": 0,
+    "rings_with_abuse": 40
+  },
+  "precision": 0.0,
+  "recall": 0.0,
+  "ring_detection": {
+    "detected_rings": 0,
+    "fraud_bearing_rings": 40,
+    "ring_detection_recall": 0.0
+  },
+  "roc_auc": 0.6563592672973517,
+  "stream": {
+    "account_events_consumed": 103240,
+    "ground_truth_published_to_kafka": false,
+    "group_id": "risk-manager-eval-baseline-a",
+    "high_watermark_at_start": 3057502,
+    "partitions": 1,
+    "topic": "world_b.events"
+  },
+  "threshold": 0.07,
+  "transactions": 2954262,
+  "true_negatives": 2951160,
+  "true_positives": 0,
+  "world": "world_b"
+}

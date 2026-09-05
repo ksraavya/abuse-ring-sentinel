@@ -1,0 +1,100 @@
+{
+  "economic_cost": 7121500.0,
+  "evaluation_contract": {
+    "feature_count": 26,
+    "ground_truth_source": "data\\generated\\world_b\\ground_truth.jsonl",
+    "infrastructure_raw_columns_in_model": [],
+    "manifest_source": "data\\generated\\world_b\\manifest.json",
+    "model_retrained_on_world_b": false,
+    "threshold_tuned_on_world_b": false,
+    "world_b_kafka_is_evaluation_input": true,
+    "world_b_source_events": "data\\generated\\world_b\\events.jsonl"
+  },
+  "exposure": {
+    "exposure_prevented": 3556593.260000002,
+    "exposure_prevented_pct": 0.8552134434267918,
+    "fraud_exposure": 4158720.01
+  },
+  "false_negative_cost": 5000.0,
+  "false_negatives": 439,
+  "false_positive_cost": 500.0,
+  "false_positives": 9853,
+  "fnr": 0.14216321243523317,
+  "fpr": 0.0033386713219891472,
+  "fraud_rate": 0.0010452695123181355,
+  "fraud_transactions": 3088,
+  "frozen_artifact": {
+    "artifact_dir": "artifacts\\temporal",
+    "feature_count": 26,
+    "feature_list": [
+      "amount",
+      "amount_log",
+      "hour",
+      "day_of_week",
+      "is_weekend",
+      "is_night",
+      "channel_upi",
+      "channel_card",
+      "channel_wallet",
+      "channel_netbanking",
+      "p2p_txn_count_24h",
+      "p2p_unique_neighbors_24h",
+      "p2p_unique_neighbors_14d",
+      "p2p_amount_24h",
+      "activity_count_6h",
+      "activity_count_24h",
+      "days_since_last_txn",
+      "new_neighbors_14d",
+      "new_neighbors_24h",
+      "edge_creation_acceleration",
+      "reciprocal_neighbors_14d",
+      "neighbor_activity_6h",
+      "neighbor_activity_24h",
+      "cluster_activity_synchrony_6h",
+      "neighbor_merchant_overlap_24h",
+      "activity_acceleration_6h_vs_7d"
+    ],
+    "model_sha256": "487b225a80266ecf8f5232a86d26c0b90b4fedc837f827512d387b368b77234f",
+    "threshold": 0.01
+  },
+  "model": "temporal",
+  "pr_auc": 0.7313744942991302,
+  "pre_abuse": {
+    "lead_time_days_max": 29.488200638587966,
+    "lead_time_days_mean": 8.885241832052051,
+    "lead_time_days_median": 5.106077629953703,
+    "lead_time_days_min": 0.6534503405555556,
+    "pre_abuse_detection_recall": 0.925,
+    "rings_detected_pre_abuse": 37,
+    "rings_with_abuse": 40
+  },
+  "precision": 0.21188609822428411,
+  "recall": 0.8578367875647669,
+  "ring_detection": {
+    "detected_rings": 40,
+    "fraud_bearing_rings": 40,
+    "ring_detection_recall": 1.0
+  },
+  "roc_auc": 0.9824554482056462,
+  "state": {
+    "behavioral_graph": true,
+    "infrastructure_state": true,
+    "read_state_before_score": true,
+    "score_before_current_transaction_state_update": true,
+    "transaction_history": true,
+    "transaction_mutates_infrastructure_state": false
+  },
+  "stream": {
+    "account_events_consumed": 103240,
+    "ground_truth_published_to_kafka": false,
+    "group_id": "risk-manager-eval-temporal",
+    "high_watermark_at_start": 3057502,
+    "partitions": 1,
+    "topic": "world_b.events"
+  },
+  "threshold": 0.01,
+  "transactions": 2954262,
+  "true_negatives": 2941321,
+  "true_positives": 2649,
+  "world": "world_b"
+}

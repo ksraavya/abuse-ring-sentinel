@@ -1,0 +1,70 @@
+{
+  "alert_rate": 0.004093753658762724,
+  "average_evidence_items_per_alert": 2.5322367333443543,
+  "causal_contract": {
+    "ground_truth_loaded_by_replay": false,
+    "raw_infrastructure_columns_in_temporal_model": [],
+    "read_pre_event_state": true,
+    "score_before_current_transaction_state_update": true,
+    "transaction_mutates_infrastructure_state": false
+  },
+  "detector_alerts": 12098,
+  "evidence_by_type": {
+    "account_context": 13393,
+    "behavioral_acceleration": 3023,
+    "infrastructure_sharing": 1693,
+    "merchant_convergence": 1536,
+    "peer_synchrony": 3092,
+    "ring_structure": 5977,
+    "temporal_context": 1921
+  },
+  "evidence_items": 30635,
+  "frozen_detector": {
+    "artifact_dir": "artifacts\\temporal",
+    "feature_count": 26,
+    "feature_list": [
+      "amount",
+      "amount_log",
+      "hour",
+      "day_of_week",
+      "is_weekend",
+      "is_night",
+      "channel_upi",
+      "channel_card",
+      "channel_wallet",
+      "channel_netbanking",
+      "p2p_txn_count_24h",
+      "p2p_unique_neighbors_24h",
+      "p2p_unique_neighbors_14d",
+      "p2p_amount_24h",
+      "activity_count_6h",
+      "activity_count_24h",
+      "days_since_last_txn",
+      "new_neighbors_14d",
+      "new_neighbors_24h",
+      "edge_creation_acceleration",
+      "reciprocal_neighbors_14d",
+      "neighbor_activity_6h",
+      "neighbor_activity_24h",
+      "cluster_activity_synchrony_6h",
+      "neighbor_merchant_overlap_24h",
+      "activity_acceleration_6h_vs_7d"
+    ],
+    "model_sha256": "487b225a80266ecf8f5232a86d26c0b90b4fedc837f827512d387b368b77234f",
+    "threshold": 0.01,
+    "trained_world": "world_a"
+  },
+  "max_detector_probability": 0.9999999997663573,
+  "outputs": {
+    "summary": "artifacts\\verifier\\world_c\\replay_summary.json",
+    "verification_records": "artifacts\\verifier\\world_c\\verification_records.jsonl"
+  },
+  "policy_actions": {
+    "allow": 0,
+    "block": 699,
+    "review": 11399
+  },
+  "purpose": "verifier/responder development",
+  "transactions_replayed": 2955234,
+  "world": "world_c"
+}
